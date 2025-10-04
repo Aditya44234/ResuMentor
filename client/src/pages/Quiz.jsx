@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 // Mock API function - replace with your actual API call
 const submitQuiz = async (sessionId, userId, submittedAnswers) => {
-  const response = await fetch("http://localhost:3000/api/quiz/submit", {
+  const response = await fetch("https://resumentor-server.onrender.com/api/quiz/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

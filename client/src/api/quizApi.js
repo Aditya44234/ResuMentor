@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/api"; // update if needed
+const BASE_URL = "https://resumentor-server.onrender.com/api"; // update if needed
 
 export async function startQuiz(resumeText, difficulty, userId) {
     const response = await axios.post(`${BASE_URL}/quiz/start`, {
