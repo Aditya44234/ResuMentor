@@ -87,7 +87,7 @@ const generateQuizQuestions = async (resumeText, difficulty = "medium") => {
     }
 
     const prompt = `
-You are a technical interviewer. Based on the resume below, generate 5 multiple-choice questions at ${difficulty} level.
+You are a technical interviewer conducting a live interview session. Based on the candidate's resume below, generate exactly 5 multiple-choice questions at the specified difficulty level that simulate a real, interactive interview experience. Questions must be phrased naturally and conversationally, reflecting the tone and style of speaking to a candidate in person. Use clear, concise English with realistic interview-style slang or phrasing appropriate to each difficulty level.
 
 RESUME:
 """
@@ -96,26 +96,25 @@ ${resumeText}
 
 DIFFICULTY: ${difficulty}
 
-Instructions:
-- Focus only on skills, technologies, and projects mentioned.
+Requirements:
+- Focus strictly on the candidate's mentioned skills, technologies, projects, and experience.
 - Each question must have 4 options (A–D).
-- Questions should test practical understanding, not memorization.
-- Difficulty guide:
-  • easy: basics, definitions, syntax
-  • medium: application, debugging, best practices
-  • hard: architecture, optimization, edge cases
-- Include project-based questions if possible.
-- correctAnswer must be an index (0–3).
-- explanation must be clear and educational.
-- skill must name the specific tech being tested (e.g., React, MongoDB).
+- Questions should test practical understanding, debugging, best practices, or architectural thinking based on the difficulty:
+  - easy: basics, definitions, syntax
+  - medium: application, debugging, best practices
+  - hard: architecture, optimization, edge cases
+- Include questions involving candidate’s projects if possible only 2.
+- The questions should be challenging and thought-provoking enough to confirm deep comprehension, even at easy level.
+- Specify the correct answer as an index (0–3).
+- Provide a clear, educational explanation for the correct answer.
+- Indicate the specific skill being tested (e.g., React, MongoDB).
 
-Output rules:
-- Return ONLY a valid JSON array.
-- No markdown, comments, or extra text.
-- No trailing commas.
-- Embed any code as plain strings inside options or explanations.
+Output instructions:
+- Return only a valid JSON array matching the following format, without any additional text or comments.
+- Do not include markdown formatting, extraneous punctuation, or trailing commas.
+- Embed any code snippets as plain strings inside option values or explanations.
 
-Format:
+Format example:
 [
   {
     "question": "...",
@@ -126,7 +125,8 @@ Format:
   }
 ]
 
-Generate exactly 5 questions in this format.
+Generate exactly 5 questions following these guidelines.
+
 `;
 
     const response = await axios.post(
