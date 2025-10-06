@@ -155,25 +155,20 @@ const Quiz = ({ quiz, sessionId, userId, onFinish, QuizReportComponent }) => {
 
   return (
     <div className="h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex items-center justify-center px-4 py-8 relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-      </div>
+     
 
-      <div className="max-w-3xl w-full h-full relative z-10 flex flex-col overflow-hidden">
+      <div className="max-w-5xl w-full h-full relative z-10 flex flex-col overflow-hidden">
         {!showScore ? (
           <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden flex-1 flex flex-col max-h-full">
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 sm:px-8 py-6">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
-                <h1 className="text-2xl sm:text-3xl font-bold text-white">
+              <div className="flex  sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
+                <h1 className="text-xl sm:text-xl font-bold text-white">
                   Quiz Challenge
                 </h1>
-                <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-white inline-flex items-center gap-2 w-fit">
+                <div className="bg-white/20 backdrop-blur-sm px-4 py-2 flex flex-col  rounded-full text-sm font-semibold text-white  items-center gap-2 w-fit">
                   <span>
                     {answeredCount} / {quiz.length}
                   </span>
-                  <span className="text-indigo-200">Answered</span>
                 </div>
               </div>
               <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
@@ -182,14 +177,11 @@ const Quiz = ({ quiz, sessionId, userId, onFinish, QuizReportComponent }) => {
                   style={{ width: `${progressPercentage}%` }}
                 ></div>
               </div>
-              <div className="mt-3 text-sm text-indigo-100 font-medium">
-                Question {index + 1} of {quiz.length}
-              </div>
             </div>
 
-            <div className="p-6 sm:p-8 overflow-y-auto flex-1">
-              <div className="mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 leading-relaxed">
+            <div className="p-4 sm:p-8 overflow-y-auto flex-1">
+              <div className="mb-4">
+                <h2 className="text-xl sm:text-xl font-bold text-gray-800 mb-4 leading-relaxed">
                   {current.question}
                 </h2>
                 <div className="space-y-3">
@@ -199,14 +191,14 @@ const Quiz = ({ quiz, sessionId, userId, onFinish, QuizReportComponent }) => {
                       <button
                         key={i}
                         onClick={() => handleSelect(option)}
-                        className={`w-full text-left px-5 sm:px-6 py-4 rounded-xl border-2 transition-all duration-200 ${
+                        className={`w-full text-left px-5 sm:px-6 py-3 rounded-xl border-2 transition-all duration-200 ${
                           isSelected
                             ? "border-indigo-500 bg-indigo-50 shadow-lg transform scale-[1.02]"
                             : "border-gray-200 bg-white hover:border-indigo-300 hover:bg-indigo-50 hover:shadow-md"
                         }`}
                       >
                         <div className="flex items-center justify-between gap-3">
-                          <span className="font-medium text-gray-800 text-sm sm:text-base">
+                          <span className="font-medium text-gray-800 text-sm sm:text-[14px]">
                             {option}
                           </span>
                           {isSelected && (

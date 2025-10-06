@@ -56,7 +56,7 @@ const ResumeUpload = ({ onQuizStart }) => {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex items-center justify-center px-4 py-8 relative overflow-hidden">
+    <div className="h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex items-center justify-center px-4 py-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -73,7 +73,7 @@ const ResumeUpload = ({ onQuizStart }) => {
           <h1 className="text-4xl font-bold text-white mb-2">
             Resu<span className="text-indigo-400">Mentor</span>
           </h1>
-          <p className="text-indigo-200 text-lg">
+          <p className="text-indigo-200 text-sm">
             AI-Powered Resume Analysis & Skill Assessment
           </p>
         </div>
@@ -102,7 +102,7 @@ const ResumeUpload = ({ onQuizStart }) => {
                 />
                 <label
                   htmlFor="file-upload"
-                  className={`flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-2xl cursor-pointer transition-all ${
+                  className={`flex flex-col items-center justify-center w-full h-30 border-2 border-dashed rounded-2xl cursor-pointer transition-all ${
                     file
                       ? "border-indigo-500 bg-indigo-50"
                       : "border-gray-300 bg-gray-50 hover:bg-gray-100 hover:border-indigo-400"
@@ -192,7 +192,7 @@ const ResumeUpload = ({ onQuizStart }) => {
                 <button
                   onClick={() => setDifficulty("easy")}
                   disabled={loading}
-                  className={`py-3 px-4 rounded-xl font-semibold capitalize transition-all duration-200 ${
+                  className={`py-2 px-3 rounded-xl font-semibold capitalize transition-all duration-200 ${
                     difficulty === "easy"
                       ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg scale-105"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
@@ -203,7 +203,7 @@ const ResumeUpload = ({ onQuizStart }) => {
                 <button
                   onClick={() => setDifficulty("medium")}
                   disabled={loading}
-                  className={`py-3 px-4 rounded-xl font-semibold capitalize transition-all duration-200 ${
+                  className={`py-2 px-3 rounded-xl font-semibold capitalize transition-all duration-200 ${
                     difficulty === "medium"
                       ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg scale-105"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
@@ -214,7 +214,7 @@ const ResumeUpload = ({ onQuizStart }) => {
                 <button
                   onClick={() => setDifficulty("hard")}
                   disabled={loading}
-                  className={`py-3 px-4 rounded-xl font-semibold capitalize transition-all duration-200 ${
+                  className={`py-2 px-3 rounded-xl font-semibold capitalize transition-all duration-200 ${
                     difficulty === "hard"
                       ? "bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg scale-105"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-102"
@@ -280,7 +280,7 @@ const ResumeUpload = ({ onQuizStart }) => {
           </div>
 
           {/* Footer */}
-          <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
+          <div className="bg-gray-50 px-8 py-2 border-t border-gray-200">
             <p className="text-xs text-gray-600 text-center">
               🔒 Your data is secure and will be used only for quiz generation
             </p>
